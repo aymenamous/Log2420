@@ -1,5 +1,5 @@
 /*Spécification de la couleur du background et la police */
-body{
+.main{
 	background-color:#f9f9ea;
 	font-family: Arial;
 }
