@@ -1,9 +1,10 @@
-
-
+/*Spécification de la couleur du background et la police */
 body{
 	background-color:#f9f9ea;
 	font-family: Arial;
 }
+
+/*Style du menu horizontal*/
 .menu-horizontal {
 	list-style-type: none;
     position: fixed;
@@ -17,13 +18,23 @@ body{
 	box-shadow: 0px 0px 5px ;
 }
 
-.menu-icon{
+/*Style de l'icone menu*/
+.menu-icon {
 	margin: 0.8%;
+	margin-left:0;
 }
 
+/*Style du logo du site*/
+.logo-icon{
+	margin : 5%;
+	margin-right:0;
+}
+/*En pointant sur l'icone menu, changement du pointeur de la souris*/
 .menu-icon:hover{
 	cursor:pointer;
 }
+
+/*Trait formant l'icone du menu*/
 .menu-icon div{
 	background-color:white;
 	width: 30px;
@@ -32,17 +43,20 @@ body{
 	margin-left : 50px;
 	margin-right : 50px;
 	
-
+	
 }
+
+/*Permet de mettre les bouttons du menu horizontal sur une même ligne*/
 .menu-horizontal li{
-	    float: left;
-
+	float: left;
 }
 
+/*Affichage du menu deroulant quand on pointe sur l'un des bouttons du menu horizontal*/
 .menu-horizontal li:hover div{
 	display : block;
 }
 
+/*Style des bouttons du menu horizontal*/
 .menu-btn{
 	display: block;
     color: white;
@@ -52,29 +66,31 @@ body{
 	
 }
 
+/*En pointant sur l'un des bouttons du menu horizontal, changement de couleur + changement du pointeur*/
 .menu-btn:hover {
     background-color: #555;
 	cursor:pointer;
 	
 }
 
+/*Styke du menu deroulant*/
 .deroulant{
 	display: none;
 	background-color: #f9f9f9;
 	position: absolute;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	min-width:15%;
-
-
+	
 }
 
+/*En pointant sur l'un des bouttons du menu deroulant => changement de couleur + changement du pointeur*/
 .deroulant a:hover {
 	background-color: #F1F1F1;
 	cursor:pointer;
 }
 
+/*Style des bouttons du menu deroulant*/
 .deroulant a{
-	
+	text-decoration:none ;
 	display: block;
 	color:black;
 	text-align: center;
@@ -82,33 +98,35 @@ body{
 	
 }
 
+/*Style du menu vertical, par defaut il est désactivé (display = none)*/
 .menu-vertical{
 	display:none;
 	list-style-type: none;
     position: fixed;
-    top: 7.3%;
 	left: 0;
 	padding:0;
 	margin:0;
-    height: 100%;
-	background-color: #a8a8a8;
+	height: 100%;
+	background-color: #333;
 	font-size: 125	%;
 	box-shadow: 0px 0px 5px;
 }
 
+/*Style des bouttons du menu vertical*/
 .menu-vertical li a{
 	display: block;
-    color: black;
-    text-align: left;
+	color: white;
+	text-align: left;
 	text-decoration: none;
 	padding: 15px ; 
 }
+/*En pointant sur l'un des boutons du menu vertical => changement de couleur + changement de pointeur*/
 .menu-vertical li a:hover{
-	background-color: #c4c4c4;
+	background-color: #555;
 	cursor:pointer;
-	font-size:105%;
 }
 
+/*Style du footer*/
 footer{
 	color:black;
 	font-size:15px;
@@ -120,12 +138,16 @@ footer{
 	text-align:center;
 	position:absolute;
 }
-
+/*Style du contenu qui s'affiche en cliquant sur General ou Reaction*/
 #content{
 	color:black;
 	font-size:15px;
 	display:block;	
 	margin-top:50px;
-	margin-bottom:50px;
+}
+/*Style des drapeaux dans le footer*/
+.image-Drapeau{
+	box-shadow: 0px 0px 5px 0px;
+	margin-left:1%;
 }
 

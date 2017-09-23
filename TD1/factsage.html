@@ -5,70 +5,102 @@
 		<link rel="stylesheet" type="text/css" href="factsage.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="factsage.js"></script>
-	
+		
 		
 	</head>
 	<body>
-	<ul class="menu-vertical">
-		<li><a>Introduction</a></li>
-		<li><a>Database Documentation</a></li>
-		<li><a>FactSage Applications</a></li>
-		<li><a>Posters and Publications</a></li>
-		<li><a>Conferences and Workshops</a></li>
-		<li><a>Ordering and Representatives</a></li>
-		<li><a>Phase Diagram & Documentation Download</a></li>
-		<li><a>FactSage Products</a></li>
-		<li><a>CRCT Clients</a></li>
-		<li><a>Fact-Web</a></li>
-		<li><a>FactSage 7.1 News</a></li>
-		<li><a>FactSage 7.0 News</a></li>
-		<li><a>Download Service</a></li>
-		<li><a>Installation Instructions</a></li>
-	</ul>
-	<ul class="menu-horizontal">
-		<li class="menu-icon" title="Open menu"><div></div><div></div><div></div></li>
-		<li><a class="menu-btn" >Info</a>
-			<div class="deroulant">
-				<a onclick="loadDoc()">General</a>
-			</div>
-		</li>
 		
-		<li><a class="menu-btn">Databases</a>
-			<div class="deroulant">
-				<a>Documentation</a>
-				<a>View Data</a>
-				<a>Compound</a>
-				<a>Solution</a>
-			</div>
-		</li>
-		<li><a class="menu-btn" >Calculate</a>
-			<div class="deroulant">
-				<a>Reaction</a>
-				<a>Predom</a>
-				<a>EpH</a>
-				<a>Equilib</a>
-				<a>Phase Diagram</a>
-				<a>OptiSage</a>
-			</div>
-		</li>
-		<li><a class="menu-btn" >Manipulate</a>
-			<div class="deroulant">
-				<a>Results</a>
-				<a>Mixture</a>
-				<a>Fact-XML</a>
-				<a>Figure</a>
-				<a>Viscosity</a>
-				<a>Quit</a>
-			</div>
-		</li>
-	</ul>
-	<div id="content"></div>
-	<footer>
-		© CRCT 2006-2017 - www.factsage.com	 - Modified : September 12, 2017
-	</footer>
-	
-	
+		<!-- C'est le menu vertical qui contient les choix ci-dessous-->
+		<ul class="menu-vertical">
+			<!-- Chaque choix mène au lien correspondant-->
+			<li><a href="http://www.crct.polymtl.ca/factsage/fs_general.php">Introduction</a></li>
+			<li><a href="http://www.crct.polymtl.ca/fact/documentation/">Database Documentation</a></li>
+			<li><a href="http://www.crct.polymtl.ca/factsage/FactSage_Applications/">FactSage Applications</a></li>
+			<li><a href="http://www.crct.polymtl.ca/factsage/fs_publications.php">Posters and Publications</a></li>
+			<li><a href="http://www.crct.polymtl.ca/conferences.php">Conferences and Workshops</a></li>
+			<li><a href="http://www.crct.polymtl.ca/fact/pricelist.php">Ordering and Representatives</a></li>
+			<li><a href="http://www.crct.polymtl.ca/fact/download.php">Phase Diagram & Documentation Download</a></li>
+			<li><a href="http://www.crct.polymtl.ca/factsage/fs_family.php">FactSage Products</a></li>
+			<li><a href="http://www.crct.polymtl.ca/factsage/fs_clientslist.php">CRCT Clients</a></li>
+			<li><a href="http://www.crct.polymtl.ca/factweb.php">Fact-Web</a></li>
+			<li><a href="http://www.crct.polymtl.ca/fact/facthelp/fs71_news.htm">FactSage 7.1 News</a></li>
+			<li><a href="http://www.crct.polymtl.ca/fact/facthelp/fs70_news.htm">FactSage 7.0 News</a></li>
+			<li><a href="http://www.crct.polymtl.ca/factsage/fsdl_service.htm">Download Service</a></li>
+			<li><a href="http://www.crct.polymtl.ca/fact/facthelp/Images_ShowMe71/ShowMe71.htm">Installation Instructions</a></li>
+		</ul>
 		
-</body>
-
-</html>
+		<!-- C'est le menu horizontal qui contient le logo, le bouton menu et les liens ci-dessous -->
+		<ul class="menu-horizontal">
+			<!--Le logo du site web-->
+			<li><image src="logo.png" class="logo-icon"></image></li>
+			<!-- Le bouton menu qui sert à ouvrir/fermer le menu vertical-->
+			<li class="menu-icon" title="Open menu">
+				<!--Chaque div correspond à un trait blanc, l'icone du menu est faite à partir de 3 traits blancs -->
+				<div></div><div></div><div></div>
+			</li>
+			<li>
+				<a class="menu-btn" >Info</a>
+				<!--En pointant sur Info, on aura un menu déroulant contant la proposition ci dessous -->
+				<div class="deroulant">
+					<!--En cliquant sur General, son contenu s'affiche dans la page -->
+					<a onclick="chargerPage(this)" >General</a>
+				</div>
+			</li>
+			
+			<li>
+				<a class="menu-btn">Databases</a>
+				<!--En pointant sur Databases, on aura un menu déroulant contant la proposition ci dessous -->
+				<div class="deroulant">
+					<!--Chaque lien ouvrira une autre page ayant le contenu correspondant-->
+					<a href="http://www.crct.polymtl.ca/fact/documentation/">Documentation</a>
+					<a href="http://www.crct.polymtl.ca/factsage/fs_viewdata.php">View Data</a>
+					<a href="http://www.crct.polymtl.ca/factsage/fs_compound.php">Compound</a>
+					<a href="http://www.crct.polymtl.ca/factsage/fs_solution.php">Solution</a>
+				</div>
+			</li>
+			<li>
+				<a class="menu-btn" >Calculate</a>
+				<!--En pointant sur Calculate, on aura un menu déroulant contant la proposition ci dessous -->
+				<div class="deroulant">
+					<!--Chaque lien ouvrira une autre page ayant le contenu correspondant sauf Reaction-->
+					<!--En cliquant sur Reaction, son contenu s'affiche dans la page -->
+					<a onclick="chargerPage(this)">Reaction</a>
+					<a href="http://www.crct.polymtl.ca/factsage/fs_predom.php">Predom</a>
+					<a href="http://www.crct.polymtl.ca/factsage/fs_eph.php">EpH</a>
+					<a href="http://www.crct.polymtl.ca/factsage/fs_equilib.php">Equilib</a>
+					<a href="http://www.crct.polymtl.ca/factsage/fs_pd.php">Phase Diagram</a>
+					<a href="http://www.crct.polymtl.ca/factsage/fs_optisage.php">OptiSage</a>
+				</div>
+			</li>
+			<li>
+				<a class="menu-btn" >Manipulate</a>
+				<!--En pointant sur Manipulate, on aura un menu déroulant contant la proposition ci dessous -->
+				<div class="deroulant">
+					<!--Chaque lien ouvrira une autre page ayant le contenu correspondant-->
+					<a href="http://www.crct.polymtl.ca/factsage/fs_results.php">Results</a>
+					<a href="http://www.crct.polymtl.ca/factsage/fs_mixture.php">Mixture</a>
+					<a href="http://www.crct.polymtl.ca/factsage/fs_factxml.php">Fact-XML</a>
+					<a href="http://www.crct.polymtl.ca/factsage/fs_figure.php">Figure</a>
+					<a href="http://www.crct.polymtl.ca/factsage/fs_viscosity.php">Viscosity</a>
+					<a>Quit</a>
+				</div>
+			</li>
+		</ul>
+		
+		<!-- div qui contient le contenu de la page quand on appuie sur General ou Reaction -->
+		<div id="content"></div>
+		
+		<!-- Bas de page -->
+		<footer>
+			© CRCT 2006-2017 - www.factsage.com	 - Modified : September 12, 2017</br></br>
+			<img class="image-drapeau" src="http://www.crct.polymtl.ca/fact/china.jpg">
+			<a href="http://www.factsage.cn"> www.factsage.cn</a>
+			<img class="image-drapeau" src="http://www.crct.polymtl.ca/fact/japan.jpg">  
+			<a href="http://www.rccm.co.jp/product/thermodynamics/factsage/"> FactSage Japan </a>
+		</footer>
+		
+		
+		
+	</body>
+	
+</html>				
