@@ -21,13 +21,16 @@
 /*Style de l'icone menu*/
 .menu-icon {
 	margin: 0.8%;
-	margin-left:0;
+	margin-left:2%;
+	margin-right:5%;
 }
 
 /*Style du logo du site*/
 .logo-icon{
 	margin : 5%;
-	margin-right:0;
+	
+	margin-left:30%;
+	
 }
 /*En pointant sur l'icone menu, changement du pointeur de la souris*/
 .menu-icon:hover{
