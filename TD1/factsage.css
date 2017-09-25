@@ -87,7 +87,7 @@
 
 /*En pointant sur l'un des bouttons du menu deroulant => changement de couleur + changement du pointeur*/
 .deroulant a:hover {
-	background-color: #F1F1F1;
+	background-color: #e2dede;
 	cursor:pointer;
 }
 
