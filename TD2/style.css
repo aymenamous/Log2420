@@ -1,7 +1,8 @@
 .main{
 	background-color:white;
-	font-family: Arial;
+	font-family: arial;
 	color:white;
+	font-weight:bold;
 }
 
 
@@ -42,6 +43,7 @@
 
 .menu-horizontal a {
 	color :white;
+	text-decoration:none;
 }
 
 #menu1{
@@ -53,5 +55,45 @@
 #global{
 	float:right;
 	margin-right : 2.5%;
-	padding : 1.35%;
+	padding : 1.5%;
 }
+
+.nav{
+	margin-left: 3%;
+}
+
+.nav li a{
+	background-color:#f1f1f1 ;
+	
+}
+
+.active a  {
+	color:white !important;
+	background-color:#26b774 !important;
+}
+
+.tab-content{
+	margin-left:3%;
+	margin-top:1%;
+}
+
+.form-control{
+	width:100%;
+}
+
+.tab-pane h3{
+	color: #3194c5;
+}
+
+#recherche{
+	float:left;
+	width:30%;
+}
+
+#recherche hr{
+}
+
+#etat{
+	float:right;
+}
+
