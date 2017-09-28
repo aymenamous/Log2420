@@ -1,6 +1,7 @@
-body{
+.main{
 	background-color:white;
 	font-family: Arial;
+	color:white;
 }
 
 
@@ -23,7 +24,6 @@ body{
 
 .menu-horizontal li{
 	display: block;
-    color: white;
     text-align: center;
 	text-decoration: none;
 	padding : 1.3%;
@@ -38,6 +38,10 @@ body{
     background-color: #006cab;
 	cursor:pointer;
 	
+}
+
+.menu-horizontal a {
+	color :white;
 }
 
 #menu1{
