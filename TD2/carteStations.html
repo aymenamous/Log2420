@@ -1,11 +1,6 @@
 <html>
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="main.js"></script>
-		<script src="https://use.fontawesome.com/bd3e6acb4e.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css"></head>	
+	</head>	
 	<body>
 		<div id=recherche>
 			<input type="text" class="form-control"></br>
@@ -16,7 +11,26 @@
 		
 		
 		<div id="etat">
-			
-		</div>
+			<h3>Etat de la station de velos</h3>
+			<table class="table table-striped">
+			<tr>
+				<th id="barre" colspan="4"></th>
+			</tr>
+			<tr>
+				<td>ID Station</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i>
+				</td><td>Velos disponibles</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
+			</tr>
+			<tr>
+				<td>Bloquee</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td><td>Bornes disponibles</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
+			</tr>
+			<tr>
+				<td>Suspendue</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td><td>Velos indisponibles</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
+			</tr>
+			<tr>
+				<td>Hors service</td>><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td><td>Bornes indisponibles</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
+			</tr>
+			</table>
+		
+		   
 	</body>
 </html>

@@ -21,9 +21,6 @@
 
 .menu-horizontal li{
 	float: left;
-}
-
-.menu-horizontal li{
 	display: block;
     text-align: center;
 	text-decoration: none;
@@ -79,6 +76,7 @@
 
 .form-control{
 	width:100%;
+	margin-top:3%
 }
 
 .tab-pane h3{
@@ -90,11 +88,12 @@
 	width:30%;
 }
 
-#recherche hr{
-}
 
 #etat{
-	float:right;
+	float:left;
+	margin-left:3%;
+	margin-top:0%;
+	width :60%;
 }
 
 #trait-horizontal{
@@ -110,3 +109,20 @@
 	margin-top:1%;
 }
 
+.table{
+	color:black;
+	width:100%;
+}
+
+#barre{
+	background-color: #3194c5
+}
+
+.table i{
+	color:grey;
+}
+
+#map{
+	height: 400px;
+    width: 97%;
+}
