@@ -5,9 +5,10 @@
 	<body>
 	
 		<div id="recherche">
-			<input type="text" class="form-control" id="tags" onclick="activateAutoComplete()"></br>
-			<h3>Localisation:</h2>
+			<input type="text" class="form-control" id="tags" onclick="activerAutoComplete()"></br>
+			<h3>Localisation:</h3>			
 			<div id="trait-horizontal"></div>
+			<div id="stationChoisie"></div>
 		</div>
 		<div id="trait-vertical"></div>
 		
@@ -19,17 +20,20 @@
 				<th id="barre" colspan="4"></th>
 			</tr>
 			<tr>
-				<td>ID Station</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i>
-				</td><td>Velos disponibles</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
+				<td>ID Station</td><td id="idStation"><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
+				<td>V&eacutelos disponibles</td><td id="velosDispo"><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
 			</tr>
 			<tr>
-				<td>Bloquee</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td><td>Bornes disponibles</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
+				<td>Bloqu&eacutee</td><td id="bloque"><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
+				<td>Bornes disponibles</td><td id="bornesDispo"><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
 			</tr>
 			<tr>
-				<td>Suspendue</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td><td>Velos indisponibles</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
+				<td>Suspendue</td><td id="suspendue"><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
+				<td>V&eacutelos indisponibles</td><td id="velosIndispo"><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
 			</tr>
 			<tr>
-				<td>Hors service</td>><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td><td>Bornes indisponibles</td><td><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
+				<td>Hors service</td>><td id="horsService"><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
+				<td>Bornes indisponibles</td><td id="borneIndispo"><i class="fa fa-minus-circle" aria-hidden="true"></i></td>
 			</tr>
 			</table>
 		

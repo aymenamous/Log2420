@@ -2,7 +2,7 @@
 	background-color:white;
 	font-family: arial;
 	color:white;
-	font-weight:bold;
+	
 }
 
 
@@ -17,6 +17,7 @@
 	background-color: #3194c5;
 	font-size: 125	%;
 	box-shadow: 0px 0px 5px ;
+	font-weight:bold;
 }
 
 .menu-horizontal li{
@@ -56,6 +57,7 @@
 }
 
 .nav{
+	font-weight:bold;
 	margin-left: 3%;
 }
 
@@ -129,4 +131,13 @@
 }
 .gm-style-iw{
 	color:black;
+}
+#stationChoisie{
+	font-size : 18px;
+	margin-top:2%;
+}
+
+.colonneCircle{
+	background-color:grey;
+	border-radius : 25%;
 }
