@@ -128,6 +128,7 @@
 #map{
 	height: 400px;
     width: 97%;
+	float:left;
 }
 .gm-style-iw{
 	color:black;
@@ -135,11 +136,6 @@
 #stationChoisie{
 	font-size : 18px;
 	margin-top:2%;
-}
-
-.colonneCircle{
-	background-color:grey;
-	border-radius : 25%;
 }
 
 #liste{

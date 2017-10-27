@@ -38,7 +38,12 @@ function getData(callback) {
 };
 
 function activerAutoComplete(){
-	getData(function(stations, stationName) {
+	$.getJSON( "https://secure.bixi.com/data/stations.json", function(data) {
+		var stationName = [];
+		$.each( data["stations"], function(key,val ) {
+			stationName.push(val["s"]);
+			
+		});
 		$("#tags" ).autocomplete({
 			source: stationName,
 			select: function(event, ui){
@@ -51,7 +56,6 @@ function activerAutoComplete(){
 						pos["lat"] = val["la"];
 						pos["lng"] = val["lo"];
 						$("#idStation").text(val["n"]);
-						$("#idStation").addClass("colonneCircle");
 						$("#velosDispo").text(val["ba"]);
 						remplirEtatStation("#bloque",val["b"]);
 						$("#bornesDispo").text(val["da"]);
@@ -72,6 +76,8 @@ function activerAutoComplete(){
 			}
 		});
 	});
+	
+	
 };
 
 function showTable() {
