@@ -10,13 +10,35 @@ $(document).ready(function(){
 
 var map;
 var marker;
-function activerAutoComplete(){
+var stations;
+var stationName = [];
+
+function getData(callback) {
+	if (stations) {
+		callback(stations, stationName);
+		return;
+	}
+
+	function getState(station) {
+		if (station.b) { return "bloqu&eacute"; }
+		if (station.su) { return "suspendu"; }
+		if (station.m) { return "hors service"; }
+		return "active";
+	};
+
 	$.getJSON( "https://secure.bixi.com/data/stations.json", function(data) {
-		var stationName = [];
-		$.each( data["stations"], function(key,val ) {
+		stations = data["stations"];
+		$.each( stations, function(key,val ) {
 			stationName.push(val["s"]);
-			
+			val.state = getState(val);
 		});
+
+		callback(stations, stationName);
+	});
+};
+
+function activerAutoComplete(){
+	getData(function(stations, stationName) {
 		$("#tags" ).autocomplete({
 			source: stationName,
 			select: function(event, ui){
@@ -49,28 +71,49 @@ function activerAutoComplete(){
 				});
 			}
 		});
+	});
+};
+
+function showTable() {
+
+	getData(function(stations, stationName) {
+		console.log(stations);
+		var data = stations.map(function(station) {
+			return [
+				station.id,
+				station.s,
+				station.ba,
+				station.da,
+				station.state,
+			];
+		});
 		$('#caracteristique').DataTable({
-                data: data,
-                columns: [
-                    {
-                        title: "ID"
-                    }, {
-                        title: "Nom"
-                    }, {
-                        title: "Vélos disponibles"
-                    }, {
-                        title: "Bornes disponibles"
-                    }, {
-                        title: "État bloqué"
-                    }, {
-                        title: "État suspendu"
+            data: data,
+            columns: [
+                {
+                    title: "ID"
+                }, {
+                    title: "Nom"
+                }, {
+                    title: "V&eacutelos disponibles"
+                }, {
+                    title: "Bornes disponibles"
+                }, {
+                    title: "&Eacutetat"
+                }
+            ],
+            language: {
+                    Paginate: {
+                        sPrevious: "Page pr&eacute;c&eacute;dent",
+                        sNext: "Page suivante",
+                    },
+                    Aria: {
+                        sSortAscending: ": activer pour trier la colonne par ordre croissant",
+                        sSortDescending: ": activer pour trier la colonne par ordre d&eacute;croissant"
                     }
-                ]
-				
+            }
 		});
 	});
-	
-	
 };
 
 function remplirEtatStation(colonne,valeur){
