@@ -38,40 +38,47 @@ function getData(callback) {
 };
 
 function activerAutoComplete(){
-	getData(function(stations, stationName) {
-		$("#tags" ).autocomplete({
-			source: stationName,
-			select: function(event, ui){
-				$("#stationChoisie").text(ui["item"]["value"]);
-				
-				
-				var pos = {lat: 0, lng: 0};
-				$.each( data["stations"], function(key,val ) {
-					if (val["s"] == ui["item"]["value"] ){
-						pos["lat"] = val["la"];
-						pos["lng"] = val["lo"];
-						$("#idStation").text(val["n"]);
-						$("#idStation").addClass("colonneCircle");
-						$("#velosDispo").text(val["ba"]);
-						remplirEtatStation("#bloque",val["b"]);
-						$("#bornesDispo").text(val["da"]);
-						remplirEtatStation("#suspendue",val["su"]);
-						$("#velosIndispo").text(val["bx"]);
-						remplirEtatStation("#horsService",val["m"]);
-						$("#borneIndispo").text(val["dx"]);
-					}
-					
-				});
-				if (marker != null){
-					marker.setMap(null);
-				}
-				marker = new google.maps.Marker({
-					position: pos,
-					map: map,
-				});
-			}
-		});
-	});
+  $.getJSON( "https://secure.bixi.com/data/stations.json", function(data) {
+    var stationName = [];
+    $.each( data["stations"], function(key,val ) {
+      stationName.push(val["s"]);
+      
+    });
+    $("#tags" ).autocomplete({
+      source: stationName,
+      select: function(event, ui){
+        $("#stationChoisie").text(ui["item"]["value"]);
+        
+        
+        var pos = {lat: 0, lng: 0};
+        $.each( data["stations"], function(key,val ) {
+          if (val["s"] == ui["item"]["value"] ){
+            pos["lat"] = val["la"];
+            pos["lng"] = val["lo"];
+            $("#idStation").text(val["n"]);
+            $("#idStation").addClass("colonneCircle");
+            $("#velosDispo").text(val["ba"]);
+            remplirEtatStation("#bloque",val["b"]);
+            $("#bornesDispo").text(val["da"]);
+            remplirEtatStation("#suspendue",val["su"]);
+            $("#velosIndispo").text(val["bx"]);
+             remplirEtatStation("#horsService",val["m"]);
+            $("#borneIndispo").text(val["dx"]);
+          }
+          
+        });
+        if (marker != null){
+          marker.setMap(null);
+        }
+        marker = new google.maps.Marker({
+          position: pos,
+          map: map,
+        });
+      }
+    });
+  });
+  
+  
 };
 
 function showTable() {
