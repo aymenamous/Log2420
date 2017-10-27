@@ -49,6 +49,25 @@ function activerAutoComplete(){
 				});
 			}
 		});
+		$('#caracteristique').DataTable({
+                data: data,
+                columns: [
+                    {
+                        title: "ID"
+                    }, {
+                        title: "Nom"
+                    }, {
+                        title: "Vélos disponibles"
+                    }, {
+                        title: "Bornes disponibles"
+                    }, {
+                        title: "État bloqué"
+                    }, {
+                        title: "État suspendu"
+                    }
+                ]
+				
+		});
 	});
 	
 	
