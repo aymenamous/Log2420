@@ -1,65 +1,44 @@
 <html>
 	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://use.fontawesome.com/bd3e6acb4e.js"></script>
+		<script src="main.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="styleTable.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 	</head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://use.fontawesome.com/bd3e6acb4e.js"></script>
-	<script src="main.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="styleTable.css">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	
-	
-	
+
 	<body class="main">
+		<!-- Menu horizontal du haut de la page -->
 		<ul class="menu-horizontal">
 			<li id="menu1" >
-				<a>V&eacutelo de Montr&eacuteal</a>
+				<a name='redirect'>V&eacutelo de Montr&eacuteal</a>
 			</li>
 			<li>
-				<a>Accueil</a>
+				<a name='redirect'>Accueil</a>
 			</li>
 			<li id="global">
 				<a><i class="fa fa-globe fa-lg" aria-hidden="false"></i></a>
 			</li>
 		</ul>
+		<!-- Onglets -->
 		<ul class="nav nav-tabs">
-		
 			<li class="active">
 				<a data-toggle="tab" href="#carte">Carte des stations</a>
 			</li>
-			<li><a data-toggle="tab" href="#liste">Liste des stations</a></li>
+			<li>
+				<a data-toggle="tab" href="#liste">Liste des stations</a>
+			</li>
 		</ul>
+		<!-- Contenu des onglets -->
 		<div class="tab-content">
 			<div id="carte" class="tab-pane fade in active"></div>
 			<div id="liste" class="tab-pane fade"></div>
-					
-			
 		</div>
-		
-	</div>
-	
-	
-	
-	
-	
-</body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	</body>
 </html>								
