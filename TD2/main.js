@@ -107,19 +107,23 @@ function remplirEtatStation(colonne,valeur){
 	}
 }
 
+//Fonction qui récupère les données des stations pour la Table (onglet liste des Stations)
 function getData(callback) {
 	if (stations) {
 		callback(stations, stationName);
 		return;
 	}
 	
+	// On a choisi d'afficher l'état des stations sur une colonne plutôt que d'avoir deux colonnes avec des bouléens, 
+	// Cela a comme conséquence d'alléger la charge cognitive en facilitant l'accès à l'information.
 	function getState(station) {
 		if (station.b) { return "bloqu&eacute"; }
 		if (station.su) { return "suspendu"; }
 		if (station.m) { return "hors service"; }
 		return "active";
 	};
-	
+
+	// On crée un tableau avec les champs des stations et en rajoutant la variable 
 	$.getJSON( "https://secure.bixi.com/data/stations.json", function(data) {
 		stations = data["stations"];
 		$.each( stations, function(key,val ) {
@@ -131,6 +135,8 @@ function getData(callback) {
 	});
 };
 
+
+//Fonction pour afficher la table
 function showTable() {
 	
 	getData(function(stations, stationName) {
@@ -144,6 +150,7 @@ function showTable() {
 				station.state,
 			];
 		});
+		// On crée les titres des colonnes
 		$('#caracteristique').DataTable({
             data: data,
             columns: [
@@ -159,6 +166,7 @@ function showTable() {
                     title: "&Eacutetat"
 				}
 			],
+			// On charge les éléments de langue française.
 			language: {
 			    "sProcessing":     "Traitement en cours...",
 			    "sSearch":         "Rechercher&nbsp;:",
