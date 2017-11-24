@@ -2,18 +2,22 @@
 	<head>
 		<link rel="stylesheet" href="thermostat.css">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-		<link rel="stylesheet" href="jquery-ui-slider-pips.css">
-		  <link rel="stylesheet" href="/resources/demos/style.css">
-
+		<link rel="stylesheet" href="ressources/jquery-ui-slider-pips.css">
+		<link rel="stylesheet" href="ressources/jqx.base.css" type="text/css" />
+		
+		
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="thermostat.js"></script>
-		<script src="jquery-ui-slider-pips.js"></script>
+		<script src="ressources/jquery-ui-slider-pips.js"></script>
+		<script type="text/javascript" src="ressources/jqxcore.js"></script>
+		<script type="text/javascript" src="ressources/jqxprogressbar.js"></script>
 	</head>
 	<body>
 	<div class="thermometre-container">
 		<div class="cadre "></div>
-		Thermomètre
+		
+		Thermom&egravetre
 		
 	</div>
 	<div class="text-container">
@@ -23,18 +27,18 @@
 				<td>Actif</td>
 			</tr>
 			<tr>
-				<td>Température extérieure</td>
+				<td>Temp&eacuterature ext&eacuterieure</td>
 				<td>0</td>
 			</tr>
 			<tr>
 				<td>Thermostat</td>
-				<td>20</td>
+				<td><div id="tdValeurThermostat"></div></td>
 			</tr>
 		</table>
 	</div>
 	<div class="thermostat-container">
 		<div id="thermostat"></div>
-		<div id="tdValeurThermostat"></div>
+		Thermostat
 	</div>
 	
 	</body>

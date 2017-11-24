@@ -35,12 +35,24 @@
       $("#tdValeurThermostat").text( ui.value );
     }
   });
+  //("#jqxProgressBar6").jqxProgressBar({showText: true, template: "danger", width: 50, height: 100, value: 50, orientation: 'vertical', });
   
-  
-  $( ".cadre" ).progressbar({
+  $( ".cadre" ).jqxProgressBar({
+	showText: true,
 	orientation: 'vertical',
-      max:100,
-      value: 50
+	template: "danger",
+    height: 320,
+    width: 40,
+	value:56,
+	layout: 'reverse',
+	renderText: function (text, value)
+                {
+				//need to get max thermometre value with observer
+					if (value >55){
+						return "<span style='font-size:200%; color:white;'>" + value*50/100 + "</span>";
+					}
+					return "<span style='font-size:200%; color:black;'>" + value*50/100 + "</span>";
+				}
     });
   
 });
