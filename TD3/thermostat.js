@@ -34,28 +34,29 @@
       $("#tdValeurThermostat").text( ui.value );
     }
   });
-
-/*********************Ne pas modifier***********************/
-    function chrono(newInteriorTemperatureVal, newChauffageVal) {
-        
-        // Thermometre
-        const heightPercentage = (newInteriorTemperatureVal * 100) / (thermometreMax - thermometreMin) + (thermometreMax - thermometreMin) / 2;
-        $( ".cadre" ).jqxProgressBar({
+  $( ".cadre" ).jqxProgressBar({
               showText: true,
               orientation: 'vertical',
               template: "danger",
-              height: 320,
+              height: 250,
               width: 40,
-              value: Math.round(newInteriorTemperatureVal),
+              value: Math.round(temperatureInterieure),
               layout: 'reverse',
               renderText: function (text, value)
                 {
                   //need to get max thermometre value with observer
                     if (value >55){
-                      return "<span style='font-size:200%; color:white;'>" + value*50/100 + "</span>";
+                      return "<span style='font-size:200%; color:white;'>" + value+ "</span>";
                     }
-                    return "<span style='font-size:200%; color:black;'>" + value*50/100 + "</span>";
+                    return "<span style='font-size:200%; color:black;'>" +value+ "</span>";
                   }
+              });
+
+/*********************Ne pas modifier***********************/
+/* On actualise les valeurs du thermomètre et de la console avec l'objet Observable */
+    function chrono(newInteriorTemperatureVal, newChauffageVal) {
+       $( ".cadre" ).jqxProgressBar({
+              value: Math.round(newInteriorTemperatureVal),
               });
         // Chauffage
         $('#chauffage').html(newChauffageVal ? 'Actif' : 'Inactif');
