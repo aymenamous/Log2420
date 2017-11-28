@@ -1,44 +1,47 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="thermostat.css">
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-		<link rel="stylesheet" href="jquery-ui-slider-pips.css">
-		  <link rel="stylesheet" href="/resources/demos/style.css">
 
-		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script src="thermostat.js"></script>
-		<script src="jquery-ui-slider-pips.js"></script>
+		<link rel="stylesheet" href="thermostat.css">
+		<link rel="stylesheet" href="ressources/jquery-ui-slider-pips.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+		<link rel="stylesheet" href="ressources/jquery-ui-slider-pips.css">
+		<link rel="stylesheet" href="ressources/jqx.base.css" type="text/css" />
+		
 	</head>
 	<body>
 	<div class="thermometre-container">
 		<div class="cadre "></div>
-		Thermomètre
-		
+		Thermom&egravetre</span>
 	</div>
 	<div class="text-container">
-		<table>
+		<table class="information-chambre">
 			<tr>
-				<td>Chauffage</td>
-				<td>Actif</td>
+				<td class="infotype">Chauffage</td>
+				<td id ="chauffage"></td>
 			</tr>
 			<tr>
-				<td>Température extérieure</td>
-				<td>0</td>
+				<td class="infotype">Temp&eacuterature ext&eacuterieure :</td>
+				<td id ="TempExt"> 0 </td>
 			</tr>
 			<tr>
-				<td>Thermostat</td>
-				<td>20</td>
+				<td class="infotype">Thermostat :</td>
+				<td id ="tdValeurThermostat"></td>
 			</tr>
 		</table>
 	</div>
 	<div class="thermostat-container">
 		<div id="thermostat"></div>
-		<div id="tdValeurThermostat"></div>
 	</div>
-	
+		
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script type="text/javascript" src="ressources/jquery-ui-slider-pips.js"></script>
+		<script type="text/javascript" src="ressources/jqxcore.js"></script>
+		<script type="text/javascript" src="ressources/jqxprogressbar.js"></script>
+		<script type="text/javascript" src="chambre.js"></script>
+		<script type="text/javascript" src="thermostat.js"></script>
+		
 	</body>
-	
-	
-	
+
 </html>

@@ -11,8 +11,7 @@
  *Pour démarrer le chauffage, il faut cliquer le curseur de défilement
  */
 /*********************Ne pas modifier***********************/
- $(document).ready(function() {
- 
+ $(function() {
   $("#thermostat").slider(
   {
     orientation: 'vertical',
@@ -35,13 +34,53 @@
       $("#tdValeurThermostat").text( ui.value );
     }
   });
-  
-  
-  $( ".cadre" ).progressbar({
-	orientation: 'vertical',
-      max:100,
-      value: 50
-    });
-  
-});
+
 /*********************Ne pas modifier***********************/
+    function chrono(newInteriorTemperatureVal, newChauffageVal) {
+        
+        // Thermometre
+        const heightPercentage = (newInteriorTemperatureVal * 100) / (thermometreMax - thermometreMin) + (thermometreMax - thermometreMin) / 2;
+        $( ".cadre" ).jqxProgressBar({
+              showText: true,
+              orientation: 'vertical',
+              template: "danger",
+              height: 320,
+              width: 40,
+              value: Math.round(newInteriorTemperatureVal),
+              layout: 'reverse',
+              renderText: function (text, value)
+                {
+                  //need to get max thermometre value with observer
+                    if (value >55){
+                      return "<span style='font-size:200%; color:white;'>" + value*50/100 + "</span>";
+                    }
+                    return "<span style='font-size:200%; color:black;'>" + value*50/100 + "</span>";
+                  }
+              });
+        // Chauffage
+        $('#chauffage').html(newChauffageVal ? 'Actif' : 'Inactif');
+        $('#chauffage').css('background-color', newChauffageVal ? '#FF0000' : 'white');
+        $('#chauffage').css('color', newChauffageVal ? 'white' : 'black');
+    }
+    const Observable = {
+    observers:[] ,
+    lastId: -1 ,
+    addObserver: function(observer) {
+      this.observers.push({callback:observer, id: ++this.lastId})
+    } ,
+    removeObserver: function(observer) {
+      var index = this.observers.indexOf(observer)
+      if(~index) {
+        this.observers.splice(index,1)
+      }
+    } ,
+    notifyObserver: function() {
+      this.observers.forEach(obs => obs.callback(temperatureInterieure, chauffage));
+    } 
+  }
+  const Observer = Observable.addObserver(chrono);
+  setInterval(() => {
+        ticTac();
+        Observable.notifyObserver();
+    }, intervalleTemps);
+});
