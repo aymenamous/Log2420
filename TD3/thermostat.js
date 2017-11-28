@@ -76,7 +76,7 @@
       }
     } ,
     notifyObserver: function() {
-      this.observers.forEach(obs => obs.callback(temperatureInterieure, chauffage));
+      this.observers.forEach(obser => obser.callback(temperatureInterieure, chauffage));
     } 
   }
   const Observer = Observable.addObserver(chrono);
